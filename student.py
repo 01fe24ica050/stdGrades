@@ -1,56 +1,31 @@
 import sys
 
-def calculate_grade(avg):
-    if 90 <= avg <= 100:
-        return "S"
-    elif 80 <= avg < 90:
+def calculate_grade(marks):
+    if marks >= 90:
         return "A"
-    elif 65 <= avg < 80:
+    elif marks >= 75:
         return "B"
-    elif 50 <= avg < 65:
+    elif marks >= 65:
         return "C"
-    elif 40 <= avg < 50:
+    elif marks >= 60:
         return "D"
     else:
         return "F"
 
 
-def print_grade_table():
-    print("------ GRADING CRITERIA ------")
-    print("| Marks (%) | Grade |")
-    print("| 90 - 100  |   S   |")
-    print("| 80 - 89   |   A   |")
-    print("| 65 - 79   |   B   |")
-    print("| 50 - 64   |   C   |")
-    print("| 40 - 49   |   D   |")
-    print("| Below 40  |   F   |")
-    print("------------------------------")
-
-
 def main():
-    if len(sys.argv) != 7:
-        print("Usage: python student.py <name> <department> <semester> <m1> <m2> <m3>")
-        sys.exit(1)
+    name1 = input()
+    name2 = input()
 
-    name = sys.argv[1]
-    department = sys.argv[2]
-    semester = sys.argv[3]
+    m1 = int(input())
+    m2 = int(input())
+    m3 = int(input())
 
-    marks1 = int(sys.argv[4])
-    marks2 = int(sys.argv[5])
-    marks3 = int(sys.argv[6])
-
-    average = (marks1 + marks2 + marks3) / 3
-    grade = calculate_grade(average)
-
-    print_grade_table()
-
-    print("------ STUDENT DETAILS ------")
-    print(f"Name      : {name}")
-    print(f"Department: {department}")
-    print(f"Semester  : {semester}")
-    print(f"Average   : {average:.2f}")
-    print(f"Grade     : {grade}")
+    print(name1)
+    print(name2)
+    print("Grade", calculate_grade(m1))
+    print("Grade", calculate_grade(m2))
+    print("Grade", calculate_grade(m3))
 
 
 if __name__ == "__main__":
