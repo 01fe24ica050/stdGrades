@@ -1,32 +1,18 @@
 import sys
 
-def calculate_grade(marks):
-    if marks >= 90:
-        return "A"
-    elif marks >= 75:
-        return "B"
-    elif marks >= 65:
-        return "C"
-    elif marks >= 60:
-        return "D"
-    else:
-        return "F"
-
-
 def main():
-    name1 = input()
-    name2 = input()
+    name = sys.argv[1]
+    m1 = int(sys.argv[2])
+    m2 = int(sys.argv[3])
+    m3 = int(sys.argv[4])
 
-    m1 = int(input())
-    m2 = int(input())
-    m3 = int(input())
+    total = m1 + m2 + m3
+    avg = total / 3
 
-    print(name1)
-    print(name2)
-    print("Grade", calculate_grade(m1))
-    print("Grade", calculate_grade(m2))
-    print("Grade", calculate_grade(m3))
-
+    print("Name:", name)
+    print("Marks:", m1, m2, m3)
+    print("Total:", total)
+    print("Average:", avg)
 
 if __name__ == "__main__":
     main()
